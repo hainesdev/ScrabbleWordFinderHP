@@ -1,0 +1,15 @@
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\bin\Debug\HighPerformanceListView.dll
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\bin\Debug\HighPerformanceListView.pdb
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\obj\Debug\TestApplication.csprojResolveAssemblyReference.cache
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\obj\Debug\TestApplication.Properties.Resources.resources
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\obj\Debug\TestApplication.TestFormHighPerformanceListView.resources
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\obj\Debug\TestApplication.csproj.GenerateResource.Cache
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\bin\Debug\Scrabble Word Finder.exe.manifest
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\bin\Debug\Scrabble Word Finder.application
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\bin\Debug\Scrabble Word Finder.exe
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\bin\Debug\Scrabble Word Finder.pdb
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\obj\Debug\Scrabble Word Finder.exe.manifest
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\obj\Debug\Scrabble Word Finder.application
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\obj\Debug\Scrabble Word Finder.exe
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\obj\Debug\Scrabble Word Finder.pdb
+C:\Users\QuickSon\Desktop\HighPerformanceListView\TestApplication\bin\Debug\Resources\words.TXT

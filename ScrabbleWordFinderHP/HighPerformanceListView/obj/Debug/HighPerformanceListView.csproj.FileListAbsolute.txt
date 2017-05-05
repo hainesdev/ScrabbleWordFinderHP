@@ -1,0 +1,7 @@
+C:\Users\QuickSon\Desktop\HighPerformanceListView\HighPerformanceListView\bin\Debug\HighPerformanceListView.dll
+C:\Users\QuickSon\Desktop\HighPerformanceListView\HighPerformanceListView\bin\Debug\HighPerformanceListView.pdb
+C:\Users\QuickSon\Desktop\HighPerformanceListView\HighPerformanceListView\obj\Debug\HighPerformanceListView.csprojResolveAssemblyReference.cache
+C:\Users\QuickSon\Desktop\HighPerformanceListView\HighPerformanceListView\obj\Debug\HarpyEagle.HighPerformanceControls.HighPerformanceListView.resources
+C:\Users\QuickSon\Desktop\HighPerformanceListView\HighPerformanceListView\obj\Debug\HighPerformanceListView.csproj.GenerateResource.Cache
+C:\Users\QuickSon\Desktop\HighPerformanceListView\HighPerformanceListView\obj\Debug\HighPerformanceListView.dll
+C:\Users\QuickSon\Desktop\HighPerformanceListView\HighPerformanceListView\obj\Debug\HighPerformanceListView.pdb
