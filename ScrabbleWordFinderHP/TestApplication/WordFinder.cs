@@ -29,7 +29,7 @@ namespace TestApplication
             //file.Close();
             wordlist.Sort();
             }
-            catch (FileNotFoundException e)
+            catch (FileNotFoundException)
             {
                 string line;
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
@@ -59,7 +59,7 @@ namespace TestApplication
 
         public List<DataItem> FindWords(String Tiles)
         {
-            Tiles = Tiles.ToUpper();
+            Tiles = Tiles.ToUpperInvariant();
             char[] query = new char[Tiles.Length];
             Array.Copy(Tiles.ToCharArray(), query, Tiles.Length);
             result = fwords(query, wordlist);
@@ -68,7 +68,7 @@ namespace TestApplication
 
             foreach (string word in result)
             {
-                int score = wordscore(word.ToCharArray(), word.Length);
+                int score = wordscore(word.ToCharArray(), Tiles.ToCharArray(), word.Length);
                 DataItem item = new DataItem(word, word.Length, score);
                 dataList.Add(item);
             }
@@ -80,10 +80,10 @@ namespace TestApplication
         }
         public List<DataItem> PatternMatch(String Tiles, String Pattern)
         {
-            Tiles = Tiles.ToUpper();
+            Tiles = Tiles.ToUpperInvariant();
             char[] query = new char[Tiles.Length];
             Array.Copy(Tiles.ToCharArray(), query, Tiles.Length);
-            Pattern = Pattern.ToUpper();
+            Pattern = Pattern.ToUpperInvariant();
             char[] queryp = new char[Pattern.Length];
             Array.Copy(Pattern.ToCharArray(), queryp, Pattern.Length);
             //Add both queries together
@@ -99,7 +99,7 @@ namespace TestApplication
             List<DataItem> dataList = new List<DataItem>();
             foreach (string word in result)
             {
-                DataItem item = new DataItem(word, word.Length, wordscore(word.ToCharArray(), word.Length));
+                DataItem item = new DataItem(word, word.Length, wordscore(word.ToCharArray(), querycom, word.Length));
                 dataList.Add(item);
             }
             return dataList;
@@ -223,15 +223,31 @@ namespace TestApplication
             return results;
         }
 
-        private int wordscore(char[] worda, int length)
+        private int wordscore(char[] worda, char[] tiles, int length)
         {
             int score = 0;
             int[] chartable = new int[] {
                 1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10
             };
+
+            char[] remainingTiles = new char[tiles.Length];
+            Array.Copy(tiles, remainingTiles, tiles.Length);
             for (int j = 0; j < length; j += 1)
             {
-                score += chartable[(worda[j] - 'A')];
+                int tileIndex = Array.IndexOf(remainingTiles, worda[j]);
+                if (tileIndex >= 0)
+                {
+                    remainingTiles[tileIndex] = '0';
+                    score += chartable[(worda[j] - 'A')];
+                }
+                else
+                {
+                    tileIndex = Array.IndexOf(remainingTiles, '?');
+                    if (tileIndex >= 0)
+                    {
+                        remainingTiles[tileIndex] = '0';
+                    }
+                }
             }
             return score;
         }

@@ -282,12 +282,28 @@ namespace HarpyEagle.HighPerformanceControls
                 // Adjust maximum value of the scroll bar, such that the max value returned by the control
                 // will be the index value (into userViewableDataList) that should be displayed as the starting index
                 vScrollBar.Maximum = listViewProvider.DataCount - maxDisplayLines + vScrollBar.LargeChange - 1;
+                if (vScrollBar.Value != displayStartIdx)
+                    vScrollBar.Value = displayStartIdx;
             }
             else
             {
                 // No need to display vertical scroll bar (we can view all items in the existing listview window)
                 vScrollBar.Visible = false;
+                vScrollBar.Value = 0;
             }
+        }
+
+        private void ClampDisplayStartIndex()
+        {
+            if (listViewProvider == null)
+            {
+                displayStartIdx = 0;
+                return;
+            }
+
+            int maximumStartIndex = Math.Max(0, listViewProvider.DataCount - maxDisplayLines);
+            displayStartIdx = Math.Min(displayStartIdx, maximumStartIndex);
+            displayStartIdx = Math.Max(displayStartIdx, 0);
         }
 
 
@@ -304,8 +320,11 @@ namespace HarpyEagle.HighPerformanceControls
             {
                 // Update the number of lines we can see.
                 maxDisplayLines = GetListViewVisisbleRows();
-                if (maxDisplayLines > 0) 
+                if (maxDisplayLines > 0)
+                {
+                    ClampDisplayStartIndex();
                     RefreshListViewItems();
+                }
             }
         }
         #endregion
